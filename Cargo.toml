@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-latex"
 description = "latex grammar for the tree-sitter parsing library"
-version = "0.6.0"
+version = "0.7.1"
 keywords = ["incremental", "parsing", "latex"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/latex-lsp/tree-sitter-latex"
@@ -11,8 +11,8 @@ authors = ["Patrick Förster <patrick.foerster@outlook.de>"]
 readme = "README.md"
 autoexamples = false
 
-build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+build = "build.rs"
+include = ["build.rs", "bindings/rust/*", "grammar.js", "queries/*", "src/*"]
 
 [lib]
 path = "bindings/rust/lib.rs"
@@ -23,6 +23,7 @@ tree-sitter-language = "0.1"
 
 [build-dependencies]
 cc = "1.0"
+tree-sitter-generate = "0.26"
 
 [dev-dependencies]
 criterion = "0.5.1"
