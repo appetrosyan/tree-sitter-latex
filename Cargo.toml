@@ -12,7 +12,16 @@ readme = "README.md"
 autoexamples = false
 
 build = "build.rs"
-include = ["build.rs", "bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+include = [
+    "build.rs",
+    "bindings/rust/*",
+    "queries/*",
+    "src/parser.c",
+    "src/scanner.c",
+    "src/grammar.json",
+    "src/node-types.json",
+    "src/tree_sitter/*.h",
+]
 
 [lib]
 path = "bindings/rust/lib.rs"
@@ -23,7 +32,6 @@ tree-sitter-language = "0.1"
 
 [build-dependencies]
 cc = "1.0"
-tree-sitter-generate = "0.26"
 
 [dev-dependencies]
 criterion = "0.5.1"
